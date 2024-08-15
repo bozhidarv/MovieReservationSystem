@@ -1,0 +1,12 @@
+services:
+  movie-ticket-db:
+    build: ./mssql_database
+    container_name: movie-ticket-db
+    hostname: movie-ticket-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "MssqlPass1!"
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./db-data:/var/opt/mssql
