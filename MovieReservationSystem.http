@@ -1,6 +1,5 @@
-@MovieReservationSystem_HostAddress = http://localhost:5120
+@MovieReservationSystem_HostAddress = http://localhost:5320
 
-GET {{MovieReservationSystem_HostAddress}}/weatherforecast/
-Accept: application/json
+HEAD {{MovieReservationSystem_HostAddress}}/health/
 
 ###

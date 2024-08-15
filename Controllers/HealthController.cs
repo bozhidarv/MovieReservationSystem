@@ -4,18 +4,12 @@ namespace MovieReservationSystem.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class HealthController : ControllerBase
+public class HealthController(ILogger<HealthController> logger) : ControllerBase
 {
-    private readonly ILogger<HealthController> _logger;
-
-    public HealthController(ILogger<HealthController> logger)
-    {
-        _logger = logger;
-    }
-
     [HttpHead(Name = "GetHealthStatus")]
     public IResult Head()
     {
+        logger.LogInformation($"Health check {DateTime.Now.ToShortDateString()}-{DateTime.Now.ToLongTimeString()}");
         return Results.Ok();
     }
 }
